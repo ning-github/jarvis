@@ -29,3 +29,10 @@ angular.module('jarvis', ['ui.router'])
     search: search
   };
 })
+
+.controller('HeroesController', function($scope, Heroes){
+  $scope.display = '';  // clear display before redisplaying
+  $scope.search = function(hero){
+    $scope.display = Heroes.search(hero);
+  }
+});
