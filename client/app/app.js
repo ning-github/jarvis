@@ -4,7 +4,7 @@ angular.module('jarvis', ['ui.router'])
   var search = function(heroName){
     return $http({
       method: 'GET',
-      url: apiUrl
+      url: 
     }).then(function(res){
       // log response data
       console.log('response data: ', res.data);
