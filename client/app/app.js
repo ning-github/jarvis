@@ -1,5 +1,9 @@
 angular.module('jarvis', ['ui.router'])
 
+.config(function(){
+  
+});
+
 .factory('Heroes', function($http){
   var search = function(heroName){
     return $http({
