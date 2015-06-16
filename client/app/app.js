@@ -8,7 +8,7 @@ angular.module('jarvis', ['ui.router'])
 .factory('Heroes', function($http){
   var search = function(heroName){
     // for timestamp needed in hash
-    var ts = newDate.getTime();
+    var ts = new Date().getTime();
     // the url for the api call
     var md5 = crypto.createHash('md5');
     var hash = md5.update(ts + config.private_key + config.public_key).digest('hex');
