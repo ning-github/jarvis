@@ -1,0 +1,10 @@
+{
+  "name": "jarvis",
+  "version": "0.0.0",
+  "description": "your personal superhero assistant",
+  "main": "app.js",
+  "author": "Ning",
+  "dependencies": {
+    "express": "^4.4.5"
+  }
+}
