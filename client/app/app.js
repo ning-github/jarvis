@@ -23,8 +23,11 @@ angular.module('jarvis', ['ui.router'])
   $scope.display = '';  // clear display before redisplaying
   $scope.search = function(hero){
     return Heroes.search(hero).then(function(done){
-      $scope.pic = done.data.results[0].thumbnail.path+'.'+done.data.results[0].thumbnail.extension;
-      return $scope.display = done.data.results[0].description;
+      // if the entered hero was found
+      if (done) {
+        $scope.pic = done.data.results[0].thumbnail.path+'.'+done.data.results[0].thumbnail.extension;
+        return $scope.display = done.data.results[0].description;
+      }
     });
   };
 });
