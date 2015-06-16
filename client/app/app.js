@@ -19,9 +19,11 @@ angular.module('jarvis', ['ui.router'])
 })
 
 .controller('HeroesController', function($scope, Heroes){
+  $scope.pic = '';
   $scope.display = '';  // clear display before redisplaying
   $scope.search = function(hero){
     return Heroes.search(hero).then(function(done){
+      $scope.pic = done.data.results[0].thumbnail.path+'.'+done.data.results[0].thumbnail.extension;
       return $scope.display = done.data.results[0].description;
     });
   };
