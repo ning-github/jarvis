@@ -10,6 +10,7 @@ var app = express();
 
 // server will need to handle search requests
 app.post('/sentSearch', function(req, res){
+  // collect the passed username 
   var str = '';
   req.on('data', function(chunk){
     str+=chunk;
@@ -21,20 +22,25 @@ app.post('/sentSearch', function(req, res){
     // the url for the api call
     var md5 = crypto.createHash('md5');
     var hash = md5.update(ts + config.private_key + config.public_key).digest('hex');
+    // create the hashed url
     var apiUrl = 'http://gateway.marvel.com:80/v1/public/characters?name='+heroName+'&apikey='+config.public_key;
     apiUrl+='&ts='+ts+'&hash='+hash;
     // log apiUrl
     console.log('apiUrl: ', apiUrl);
 
+
+    // send a GET request using that url
     // defaults to GET requests
     request(apiUrl, function(err, response, body){
       if (err){
         throw err;
       }
+      console.log('finished body?: ', body);
       res.send(body);
     });
   })
 });
+
 
 
 var port = 3000;
