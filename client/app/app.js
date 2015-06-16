@@ -34,5 +34,5 @@ angular.module('jarvis', ['ui.router'])
   $scope.display = '';  // clear display before redisplaying
   $scope.search = function(hero){
     $scope.display = Heroes.search(hero);
-  }
+  };
 });
