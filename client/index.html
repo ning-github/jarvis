@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app='jarvis'>
+  <head>
+    <meta charset="utf-8" />
+    <title>Jarvis</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  </head>
+  <body>
+    <div ng-controller=''>
+      <h1>Hello, I am Jarvis</h1>
+      Ask me about &nbsp <input ng-model='newHero'>
+      <button ng-click='search(newHero)'>Right away, sir</button>
+      {{display}}
+    </div>
+
+    <!-- the ui-view directive is where our templates will be loaded into when navigted to -->
+    <div ui-view></div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-ui-router.min.js"></script>
+
+    <script src="app/app.js"></script>
+  </body>
+</html> 
