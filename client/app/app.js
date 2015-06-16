@@ -8,6 +8,7 @@ angular.module('jarvis', ['ui.router'])
       data: heroName
     }).then(function(res){
       // log response data
+      console.log('all the data!: ', res.data);
       console.log('description: ', res.data.data.results[0].description);
       return res.data;
     });
