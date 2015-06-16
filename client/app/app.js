@@ -18,7 +18,7 @@ angular.module('jarvis', ['ui.router'])
 })
 
 .controller('HeroesController', function($scope, Heroes){
-  $scope.display = 'kebab';  // clear display before redisplaying
+  $scope.display = '';  // clear display before redisplaying
   $scope.search = function(hero){
     return Heroes.search(hero).then(function(done){
       return $scope.display = done.data.results[0].description;
