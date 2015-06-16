@@ -1,7 +1,7 @@
 {
   "name": "jarvis",
   "version": "0.0.0",
-  "authors": ['Ning Xia']
+  "authors": ["Ning Xia"],
   "ignore": [
     "**/.*",
     "node_modules",
