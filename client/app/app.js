@@ -1,13 +1,17 @@
 angular.module('jarvis', ['ui.router'])
 
 .config(function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/lookup');
 
   $stateProvider
     .state('heroes', {
       url: '/heroes',
       // NOTE this template path is relative from index.html
       templateUrl: '/app/partials/heroes.html'
+    })
+    .state('lookup', {
+      url: '/lookup',
+      templateUrl: '/app/partials/lookup.html'
     })
 })
 

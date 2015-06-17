@@ -9,26 +9,10 @@
   <body>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-
     <script src="app/app.js"></script>
 
-    <section class='container'>
-      <!-- ui-view directive where templates will be loaded into when navigated to -->
-      <div ui-view>
-        <h1>Hello, I am Jarvis</h1>
-        <div ng-controller='HeroesController'>
-          Ask me about &nbsp <input ng-model='newHero'> &nbsp
-          <button ng-click='search(newHero)'>Right away, sir</button>
-          <img ng-src='{{ pic }}'>
-          <p>{{ display }}</p>
-        </div>
-      </div>
-      <!-- ui-router navigation -->
-      <a ui-sref='heroes'>My Heroes</a>
-      <a ui-sref='lookup'> Look up a hero</a>
+    <!-- ui-view directive where templates will be loaded into when navigated to -->
+    <div ui-view></div>
 
-
-
-    </section>  
   </body>
 </html>

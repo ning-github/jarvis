@@ -1,0 +1,12 @@
+<div class='container'>
+  <!-- ui-router navigation -->
+  <a ui-sref='heroes'>My Heroes</a>
+
+  <h1>Hello, I am Jarvis</h1>
+  <div ng-controller='HeroesController'>
+    Ask me about &nbsp <input ng-model='newHero'> &nbsp
+    <button ng-click='search(newHero)'>Right away, sir</button>
+    <img ng-src='{{ pic }}'>
+    <p>{{ display }}</p>
+  </div>
+</div>
