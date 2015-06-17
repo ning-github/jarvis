@@ -1,6 +1,6 @@
 // require mongoose for MongoDB
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/jarvis');
+// mongoose.connect('mongodb://localhost/jarvis');
 
 // to create an md5 hash for Marvel's serverside API use
 var crypto = require('crypto');
