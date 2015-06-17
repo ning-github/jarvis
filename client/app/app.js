@@ -1,8 +1,15 @@
 angular.module('jarvis', ['ui.router'])
 
-.config(function(){
-  
-});
+.config(function($stateProvider, $urlRouterProvider){
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider
+    .state('heroes', {
+      url: '/heroes',
+      // NOTE this template path is relative from index.html
+      templateUrl: '/app/partials/heroes.html'
+    })
+})
 
 .factory('Heroes', function($http){
   var search = function(heroName){
@@ -32,7 +39,7 @@ angular.module('jarvis', ['ui.router'])
       if (done.data.results[0].thumbnail){
         $scope.pic = done.data.results[0].thumbnail.path + '.' + done.data.results[0].thumbnail.extension;  
       } else{
-        console.log('aiyaaaa');
+        console.log('re-getting so can try to obtain thumbnail');
         $scope.search(hero);
       }
       return $scope.display = done.data.results[0].description;
