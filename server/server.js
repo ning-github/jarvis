@@ -17,7 +17,8 @@ app.use(morgan('dev')); // logging
 // serve static files (index.html)
 app.use(express.static(path.join(__dirname, '../client')));
 
-
+// routes
+// var aRouter = require('./routes/aRoute');
 
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
